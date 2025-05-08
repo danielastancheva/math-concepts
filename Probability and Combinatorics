@@ -1,0 +1,24 @@
+Binomial Distribution (Discrete)
+The binomial distribution models the number of successes in a fixed number of independent Bernoulli trials.
+Parameters:
+
+n: number of trials
+p: probability of success
+Binomial distribution: fix p = 0.5, vary n
+Visualize how the formats of the binomial function change for different values of n.
+
+p = 0.5
+n_values = [5, 10, 20, 50]
+x = np.arange(0, max(n_values) + 1)
+
+plt.figure(figsize=(10,6))
+for n in n_values:
+    pmf = binom.pmf(x, n, p)
+    plt.plot(x, pmf, marker='o', linestyle='-', label=f"n = {n}")
+
+plt.title('Binomial Distribution with p = 0.5, varying n')
+plt.xlabel('Number of Successes')
+plt.ylabel('Probability')
+plt.grid(True)
+plt.legend()
+plt.show()
